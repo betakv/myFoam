@@ -1,0 +1,68 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           volScalarField;
+    object          p;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+dimensions      [1 -1 -2 0 0 0 0];
+
+internalField   uniform 0.6e5;
+
+boundaryField
+{
+    blade
+    {
+        type            zeroGradient;
+    }
+
+    outlet
+    {
+       type            fixedMeanValue;
+       meanValue       0.409722e5;
+       //type            fixedValue;		
+       value           uniform 0.409722e5;	
+    }
+
+    inlet
+    { 
+        type     	totalPressure;
+	rho		none;
+	psi		thermo:psi;
+	gamma		1.4;
+	p0		uniform 9.80717e4;
+        value		uniform 9.80717e4;
+    }
+
+    period1
+    {
+        type            cyclic;
+    }
+    period2
+    {
+        type            cyclic;
+    }
+
+}
+
+
+
+// ************************************************************************* //

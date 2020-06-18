@@ -1,0 +1,116 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : decomposePar
+Date   : Mar 24 2020
+Time   : 08:53:31
+Host   : betak
+PID    : 11212
+I/O    : uncollated
+Case   : /home/betak/OpenFOAM/betak-v1912/FURST/myTurbulenceModels-master/testCases/T3A/mykkLOmega
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+--> FOAM Warning : 
+    From function void* Foam::dlLibraryTable::openLibrary(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 65
+    Could not load "libmyIncompressibleTurbulenceModels.so"
+/home/betak/OpenFOAM/betak-v1912/platforms/linux64GccDPInt32Opt/lib/libmyIncompressibleTurbulenceModels.so: undefined symbol: _ZTIN4Foam29incompressibleTurbulenceModelE
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'compressed', assuming no compression
+
+
+Decomposing mesh region0
+
+Create mesh
+
+Calculating distribution of cells
+Selecting decompositionMethod scotch [2]
+
+Finished decomposition in 0.03 s
+
+Calculating original mesh data
+
+Distributing cells to processors
+
+Distributing faces to processors
+
+Distributing points to processors
+
+Constructing processor meshes
+--> FOAM Warning : 
+    From function void* Foam::dlLibraryTable::openLibrary(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 65
+    Could not load "libmyIncompressibleTurbulenceModels.so"
+/home/betak/OpenFOAM/betak-v1912/platforms/linux64GccDPInt32Opt/lib/libmyIncompressibleTurbulenceModels.so: undefined symbol: _ZTIN4Foam29incompressibleTurbulenceModelE
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'compressed', assuming no compression
+
+Processor 0
+    Number of cells = 33256
+    Number of faces shared with processor 1 = 108
+    Number of processor patches = 1
+    Number of processor faces = 108
+    Number of boundary faces = 67250
+--> FOAM Warning : 
+    From function void* Foam::dlLibraryTable::openLibrary(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 65
+    Could not load "libmyIncompressibleTurbulenceModels.so"
+/home/betak/OpenFOAM/betak-v1912/platforms/linux64GccDPInt32Opt/lib/libmyIncompressibleTurbulenceModels.so: undefined symbol: _ZTIN4Foam29incompressibleTurbulenceModelE
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'compressed', assuming no compression
+
+Processor 1
+    Number of cells = 33419
+    Number of faces shared with processor 0 = 108
+    Number of processor patches = 1
+    Number of processor faces = 108
+    Number of boundary faces = 67580
+
+Number of processor faces = 108
+Max number of cells = 33419 (0.244469% above average 33337.5)
+Max number of processor patches = 1 (0% above average 1)
+Max number of faces between processors = 108 (0% above average 108)
+
+Time = 0
+
+Processor 0: field transfer
+--> FOAM Warning : 
+    From function void* Foam::dlLibraryTable::openLibrary(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 65
+    Could not load "libmyIncompressibleTurbulenceModels.so"
+/home/betak/OpenFOAM/betak-v1912/platforms/linux64GccDPInt32Opt/lib/libmyIncompressibleTurbulenceModels.so: undefined symbol: _ZTIN4Foam29incompressibleTurbulenceModelE
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'compressed', assuming no compression
+Processor 1: field transfer
+--> FOAM Warning : 
+    From function void* Foam::dlLibraryTable::openLibrary(const Foam::fileName&, bool)
+    in file db/dynamicLibrary/dlLibraryTable/dlLibraryTable.C at line 65
+    Could not load "libmyIncompressibleTurbulenceModels.so"
+/home/betak/OpenFOAM/betak-v1912/platforms/linux64GccDPInt32Opt/lib/libmyIncompressibleTurbulenceModels.so: undefined symbol: _ZTIN4Foam29incompressibleTurbulenceModelE
+--> FOAM Warning : 
+    From function static Foam::IOstreamOption::compressionType Foam::IOstreamOption::compressionEnum(const Foam::word&)
+    in file db/IOstreams/IOstreams/IOstreamOption.C at line 88
+    Unknown compression specifier 'compressed', assuming no compression
+
+End
+

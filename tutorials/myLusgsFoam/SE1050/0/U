@@ -1,0 +1,69 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  1.0                                   |
+|   \\  /    A nd           | Web:      http://www.openfoam.org               |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+
+    root            "";
+    case            "";
+    instance        "";
+    local           "";
+
+    class           volVectorField;
+    object          U;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+dimensions      [0 1 -1 0 0 0 0];
+
+internalField   uniform (9.438 3.3051 0);
+
+boundaryField
+{
+    inlet      
+    {
+      type extrapolatedDirectedVelocity;//totalPressureDirectedInletOutletVelocity;
+      gamma    1.4;
+      p0		uniform 9.80717e4;
+      inletDirection       uniform ( 0.94380  0.33051 0); 
+      value           uniform (94.38 33.051 0);
+    }
+
+    outlet
+    {
+        type            inletOutlet;
+        inletValue	uniform (0 0 0);
+        value	        uniform (9.438 3.3051 0);
+    }
+
+    wall
+    {
+        type            noSlip;
+    }
+
+    blade
+    {
+        type            noSlip;
+    }
+
+    period1
+    {
+        type            cyclic;
+    }
+    period2
+    {
+        type            cyclic;
+    }
+}
+
+
+// ************************************************************************* //

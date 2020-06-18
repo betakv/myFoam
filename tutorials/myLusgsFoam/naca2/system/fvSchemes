@@ -1,0 +1,82 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | foam-extend: Open Source CFD                    |
+|  \\    /   O peration     | Version:     3.2                                |
+|   \\  /    A nd           | Web:         http://www.foam-extend.org         |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      fvSchemes;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dbnsFlux hllcFlux;
+//dbnsFlux betaFlux;
+//dbnsFlux AUSMplusUpFlux;
+
+AUSMplusUpFluxCoeffs {
+   MaInf 0.637;
+   printCoeffs true;
+}
+
+ddtSchemes
+{
+ default         Euler;
+ ddt(epsilon)    steadyState;
+ ddt(k)    lteadyState;
+}
+
+gradSchemes
+{
+    default         Gauss linear;
+    limitedGauss    cellLimited Gauss linear 1;
+    grad(U) Gauss linear;
+    grad(h) Gauss linear;
+}
+
+divSchemes
+{
+    default         none;
+    div(devRhoReff) Gauss linear;
+    div((devRhoReff&U)) Gauss linear;
+
+    div((muEff*dev2(grad(U).T()))) Gauss linear;
+    
+    div(phi,omega)   bounded Gauss linearUpwind  limitedGauss;//limitedLinear 1;
+    div(phi,k)   bounded Gauss linearUpwind  limitedGauss;//limitedLinear 1;
+}
+
+laplacianSchemes
+{
+   default         Gauss linear corrected;
+}
+
+interpolationSchemes
+{
+    default        linear;
+    reconstruct(p) linearUpwind  limitedGauss; //upwind;
+    reconstruct(U) linearUpwindV limitedGauss; //upwind;
+    reconstruct(T) linearUpwind  limitedGauss; //upwind;
+}
+
+snGradSchemes
+{
+    default         corrected;
+}
+
+fluxRequired
+{
+    default         no;
+}
+
+wallDist
+{
+    method Poisson;
+}
+
+// ************************************************************************* //
