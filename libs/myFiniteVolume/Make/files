@@ -1,0 +1,26 @@
+bocos = fields/fvPatchFields/derived
+$(bocos)/temperatureDirectedInletOutletVelocity/temperatureDirectedInletOutletVelocityFvPatchVectorField.C
+$(bocos)/totalPressureDirectedInletOutletVelocity/totalPressureDirectedInletOutletVelocityFvPatchVectorField.C
+$(bocos)/uniformOutletInlet/uniformOutletInletFvPatchFields.C
+$(bocos)/inletOutletInternal/inletOutletInternalFvPatchFields.C
+$(bocos)/mixedSubsonicSupersonicOutlet/mixedSubsonicSupersonicOutletFvPatchScalarField.C
+$(bocos)/flowRateDirectedInletVelocity/flowRateDirectedInletVelocityFvPatchVectorField.C
+$(bocos)/movingWallSlipVelocity/movingWallSlipVelocityFvPatchVectorField.C
+$(bocos)/subsonicInletTotal/subsonicInletTotalFvPatchVectorField.C
+$(bocos)/meanTotalPressure/meanTotalPressureFvPatchScalarField.C
+$(bocos)/mixingPlane/mixingPlaneFvPatchFields.C
+$(bocos)/extrapolatedDirectedVelocity/extrapolatedDirectedVelocity.C
+
+limitedGradSchemes = finiteVolume/gradSchemes/limitedGradSchemes
+$(limitedGradSchemes)/VenkatakrishnanGrad/VenkatakrishnanGrads.C
+
+interpolationSchemes = finiteVolume/interpolationSchemes
+$(interpolationSchemes)/HRIC/HRIC.C
+$(interpolationSchemes)/mHRIC/mHRIC.C
+$(interpolationSchemes)/CICSAM/CICSAM.C
+$(interpolationSchemes)/vofCompression/vofCompression.C
+
+ddtSchemes = finiteVolume/ddtSchemes
+
+LIB = $(FOAM_USER_LIBBIN)/libmyFiniteVolume
+

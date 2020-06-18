@@ -1,0 +1,5 @@
+boundaryField/modifiedAlphatWallFunction/modifiedAlphatWallFunctionFvPatchScalarField.C
+
+turbulentFluidThermoModels/myTurbulentFluidThermoModels.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyCompressibleTurbulenceModels

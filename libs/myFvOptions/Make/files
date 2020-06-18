@@ -1,0 +1,13 @@
+derivedSources=sources
+
+$(derivedSources)/rotorDiskUpSource/rotorDiskUpSource.C
+$(derivedSources)/rotorDiskUpSource/bladeModelUp/bladeModelUp.C
+$(derivedSources)/rotorDiskUpSource/profileModelUp/profileModelUp.C
+$(derivedSources)/rotorDiskUpSource/profileModelUp/profileModelUpList.C
+$(derivedSources)/rotorDiskUpSource/profileModelUp/lookupUp/lookupUpProfile.C
+
+
+$(derivedSources)/acousticDampingPlaneSource/acousticDampingPlaneSource.C
+$(derivedSources)/fireHeatingSource/fireHeatingSource.C
+
+LIB = $(FOAM_USER_LIBBIN)/libmyFvOptions
