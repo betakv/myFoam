@@ -1,0 +1,5 @@
+IRSSmooth/IRSSmooth.C
+
+explicitDbnsFoam.C
+
+EXE = $(FOAM_USER_APPBIN)/explicitDbnsFoam
